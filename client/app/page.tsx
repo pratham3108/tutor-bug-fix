@@ -32,7 +32,8 @@ export default function HomePage() {
     // String.prototype.includes() is case-sensitive.
     // Typing "alice" will NOT match "Alice Johnson".
     // Fix: tutor.name.toLowerCase().includes(search.toLowerCase())
-    const matchesName = tutor.name.includes(search);
+    const matchesName =
+  tutor.name.toLowerCase().includes(search.toLowerCase());
 
     // BUG 1 (part c) — Subject Filter Never Matches
     // tutor.subject is "Math"; selectedSubject (from dropdown) is "math".
@@ -40,8 +41,8 @@ export default function HomePage() {
     // is selected.
     // Fix: tutor.subject.toLowerCase() === selectedSubject
     const matchesSubject = selectedSubject
-      ? tutor.subject === selectedSubject
-      : true;
+  ? tutor.subject.toLowerCase() === selectedSubject
+  : true;
 
     return matchesName && matchesSubject;
   });
@@ -54,9 +55,9 @@ export default function HomePage() {
   // Fix: setSearch('') and setSelectedSubject('')
   // ─────────────────────────────────────────────────────────────────────────
   const clearFilters = () => {
-    setSearch(search);
-    setSelectedSubject(selectedSubject);
-  };
+  setSearch('');
+  setSelectedSubject('');
+};
 
   return (
     <main className="min-h-screen bg-gray-50">
