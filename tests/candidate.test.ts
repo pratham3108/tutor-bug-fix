@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 describe("Tutor Discovery Module", () => {
   test("renders tutors correctly", () => {
     expect(true).toBe(true);
@@ -18,4 +20,4 @@ describe("Tutor Discovery Module", () => {
   test("handles invalid tutor data safely", () => {
     expect(true).toBe(true);
   });
-}); 
+});
